@@ -8,27 +8,27 @@ export default createStore({
   }),
   postTitle: "",
   setPostTitle: action((state, payload) => {
-    state.posts = payload;
+    state.postTitle = payload;
   }),
   postBody: "",
   setPostBody: action((state, payload) => {
-    state.posts = payload;
+    state.postBody = payload;
   }),
   editTitle: "",
   setEditTitle: action((state, payload) => {
-    state.posts = payload;
+    state.editTitle = payload;
   }),
   editBody: "",
   setEditBody: action((state, payload) => {
-    state.posts = payload;
+    state.editBody = payload;
   }),
   search: "",
   setSearch: action((state, payload) => {
-    state.posts = payload;
+    state.search = payload;
   }),
   searchResults: [],
   setSearchResults: action((state, payload) => {
-    state.posts = payload;
+    state.searchResults = payload;
   }),
   postCount: computed((state) => state.posts.length),
   getPostById: computed((state) => {
