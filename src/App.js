@@ -10,7 +10,7 @@ import EditPost from "./EditPost";
 import { useEffect } from "react";
 import useAxiosFetch from "./hooks/useAxiosFetch";
 import { Route, Routes } from "react-router-dom";
-import { useStoreActions } from "easy-peasy";
+import { useStoreActions, useStoreState } from "easy-peasy";
 
 function App() {
   const setPosts = useStoreActions((actions) => actions.setPosts);
@@ -20,8 +20,15 @@ function App() {
   );
 
   useEffect(() => {
-    setPosts(data);
+    if (data) {
+      setPosts(data);
+    }
   }, [data, setPosts]);
+
+  const posts = useStoreState((state) => state.posts);
+
+  console.log("Posts:", posts);
+  console.log("Data:", data);
 
   return (
     <div className="App">
