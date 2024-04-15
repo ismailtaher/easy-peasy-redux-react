@@ -3,7 +3,7 @@ import Feed from "./Feed";
 import { useStoreState } from "easy-peasy";
 
 const Home = ({ isLoading, fetchError }) => {
-  const { searchResults } = useStoreState((state) => state); // accessing the entire state object returned by Easy Peasy, This change ensures that searchResults is properly accessed from the state, resolving the "undefined" error.
+  const searchResults = useStoreState((state) => state.searchResults); // accessing the entire state object returned by Easy Peasy, This change ensures that searchResults is properly accessed from the state, resolving the "undefined" error.
 
   return (
     <main className="Home">
